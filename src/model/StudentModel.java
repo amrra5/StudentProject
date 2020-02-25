@@ -1,4 +1,8 @@
-public class Student {
+package model;
+
+
+
+public class StudentModel {
 
 	private String studentId;
 	private String firstName;
@@ -6,11 +10,11 @@ public class Student {
 	private String dob;
 	private String indexNumber;
 
-	Student() {
+	public StudentModel() {
 
 	}
 
-	Student(String studentId, String firstName, String lastName, String dob,
+	public StudentModel(String studentId, String firstName, String lastName, String dob,
 			String indexNumber) {
 		this.studentId = studentId;
 		this.firstName = firstName;
@@ -60,6 +64,13 @@ public class Student {
 	}
 
 	@Override
+	public String toString() {
+		return "Student [studentId= " + studentId + ", firstName= "
+				+ firstName + ", lastName= " + lastName + ", date= " + dob
+				+ ", indexNumber= " + indexNumber + "]";
+	}
+
+	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
@@ -78,7 +89,7 @@ public class Student {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Student other = (Student) obj;
+		StudentModel other = (StudentModel) obj;
 		if (indexNumber == null) {
 			if (other.indexNumber != null)
 				return false;
@@ -92,11 +103,7 @@ public class Student {
 		return true;
 	}
 
-	@Override
-	public String toString() {
-		return "Student [studentId= " + studentId + ", firstName= " + firstName
-				+ ", lastName= " + lastName + ", datum= " + dob
-				+ ", indexNumber= " + indexNumber + "]";
-	}
+	
 
 }
+
